@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">AriesWidget</string>
+    <string name="loading">Loading</string>
+    <string name="aries_constellation">Aries Constellation</string>
+    <string name="sightings">Sightings</string>
 </resources>

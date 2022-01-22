@@ -3,4 +3,6 @@
     <string name="loading">Loading</string>
     <string name="aries_constellation">Aries Constellation</string>
     <string name="sightings">Sightings</string>
+    <string name="good_job">Good job</string>
+    <string name="keep_looking">Keep looking</string>
 </resources>

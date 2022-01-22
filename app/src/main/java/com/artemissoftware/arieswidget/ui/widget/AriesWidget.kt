@@ -35,10 +35,12 @@ class AriesWidget : GlanceAppWidget() {
     }
 
     companion object {
+        const val SIGHTINGS_PER_DAY = 1
+
         const val WATER_WIDGET_PREFS_KEY = "WATER_WIDGET_PREFS_KEY"
-        const val RECOMMENDED_DAILY_GLASSES = 8
         const val MAX_GLASSES = 999
     }
+
 }
 
 class AriesWidgetReceiver : GlanceAppWidgetReceiver() {

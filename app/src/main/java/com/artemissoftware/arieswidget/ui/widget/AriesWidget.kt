@@ -13,6 +13,7 @@ import androidx.glance.layout.fillMaxSize
 import androidx.glance.layout.padding
 import androidx.glance.state.GlanceStateDefinition
 import androidx.glance.state.PreferencesGlanceStateDefinition
+import com.artemissoftware.arieswidget.ui.AriesWidgetScreen
 
 
 class AriesWidget : GlanceAppWidget() {
@@ -21,17 +22,17 @@ class AriesWidget : GlanceAppWidget() {
 
     @Composable
     override fun Content() {
-//        WaterWidgetContent(
-//            modifier = GlanceModifier
-//                .fillMaxSize()
-//                .background(
-//                    day = Color.Blue,
-//                    night = Color.DarkGray
-//                )
-//                .appWidgetBackground()
-//                .cornerRadius(16.dp)
-//                .padding(8.dp),
-//        )
+        AriesWidgetScreen(
+            modifier = GlanceModifier
+                .fillMaxSize()
+                .background(
+                    day = Color.Blue,
+                    night = Color.DarkGray
+                )
+                .appWidgetBackground()
+                .cornerRadius(16.dp)
+                .padding(8.dp),
+        )
     }
 
     companion object {

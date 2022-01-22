@@ -33,7 +33,46 @@ import com.artemissoftware.arieswidget.R
 import com.artemissoftware.arieswidget.ui.theme.AriesWidgetTheme
 import com.artemissoftware.arieswidget.ui.widget.AddWaterClickAction
 import com.artemissoftware.arieswidget.ui.widget.AriesWidget.Companion.SIGHTINGS_PER_DAY
+import com.artemissoftware.arieswidget.ui.widget.AriesWidget.Companion.WATER_WIDGET_PREFS_KEY
 import com.artemissoftware.arieswidget.ui.widget.ClearWaterClickAction
+
+
+@Composable
+fun AriesWidgetScreen(
+    modifier: GlanceModifier,
+) {
+    Column(
+        modifier = modifier,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        val context = LocalContext.current
+        val prefs = currentState<Preferences>()
+        val glassesOfWater = prefs[intPreferencesKey(WATER_WIDGET_PREFS_KEY)] ?: 0
+
+
+        WaterWidgetCounter(
+            context = context,
+            glassesOfWater = glassesOfWater,
+            modifier = GlanceModifier
+                .fillMaxWidth()
+                .defaultWeight()
+        )
+        WaterWidgetGoal(
+            context = context,
+            glassesOfWater = glassesOfWater,
+            modifier = GlanceModifier
+                .fillMaxWidth()
+                .defaultWeight()
+        )
+        WaterWidgetButtonLayout(
+            modifier = GlanceModifier
+                .fillMaxSize()
+                .defaultWeight()
+        )
+    }
+}
+
+
 
 @SuppressLint("StringFormatInvalid")
 @Composable

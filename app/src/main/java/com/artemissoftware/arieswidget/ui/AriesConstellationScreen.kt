@@ -26,7 +26,6 @@ import androidx.glance.text.Text
 import androidx.glance.text.TextAlign
 import androidx.glance.text.TextStyle
 import androidx.glance.unit.ColorProvider
-import com.artemissoftware.arieswidget.Greeting
 
 
 import com.artemissoftware.arieswidget.R
@@ -57,9 +56,9 @@ fun AriesWidgetScreen(
                 .fillMaxWidth()
                 .defaultWeight()
         )
-        WaterWidgetGoal(
+        SightingsGoal(
             context = context,
-            glassesOfWater = glassesOfWater,
+            numberOfSightings = glassesOfWater,
             modifier = GlanceModifier
                 .fillMaxWidth()
                 .defaultWeight()
@@ -96,15 +95,15 @@ fun WaterWidgetCounter(
 }
 
 @Composable
-fun WaterWidgetGoal(
+private fun SightingsGoal(
     context: Context,
-    glassesOfWater: Int,
+    numberOfSightings: Int,
     modifier: GlanceModifier
 ) {
     Text(
         text =
         when {
-            glassesOfWater >= SIGHTINGS_PER_DAY -> context.getString(
+            numberOfSightings >= SIGHTINGS_PER_DAY -> context.getString(
                 R.string.good_job
             )
             else -> context.getString(
